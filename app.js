@@ -33,7 +33,7 @@ app.use(bodyParser.json());
 
 
 app.get('/', (req, res) => {
-  res.json(database.users);
+  res.send('/welcome here');
 });
 
 app.use('/', user);
