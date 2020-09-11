@@ -13,10 +13,10 @@ console.log(process.env.NAME)
 const db = knex({
   client: 'pg',
   connection: {
-    host: process.env.HOST,
-    user: process.env.USER,
-    password: process.env.PASSWORD,
-    database: process.env.DATABASE
+    host: '127.0.0.1',
+    user: 'postgres',
+    password: 'my password',
+    database: 'smart_brain'
   },
 });
 
@@ -41,5 +41,5 @@ app.use('/', index);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-  console.log('Listening',port);
+  console.log('Listening', port);
 });
