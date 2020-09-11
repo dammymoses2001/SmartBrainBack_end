@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
 app.use('/', user);
 app.use('/', index);
 
-
-app.listen(3000, () => {
-  console.log('Listening');
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log('Listening',port);
 });
