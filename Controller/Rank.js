@@ -1,6 +1,5 @@
 const handleRank = (req, res, db) => {
     const { email } = req.body;
-    console.log(email, 'email')
     db('users').orderBy('entries', 'desc')
         .returning('entries')
         .then(data => {

@@ -6,7 +6,7 @@ const signIn = (req, res, bcrypt, db, jwt) => {
     .then((userdetail) => {
       const validatepassword = bcrypt.compareSync(password, userdetail[0].hash);
       if (validatepassword) {
-        db.select('*').from('users')
+        db.select('*').from('login')
           .where('email', email)
           .then(user => res.json(user[0]))
           .catch(err => res.status(400).json('unable to get user'))

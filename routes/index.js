@@ -22,7 +22,7 @@ const route = express.Router();
 route.put('/profileEdit', (req, res) =>
     updateProfile.updateProfile(req, res, db)
 );
-route.get('/userprofile', (req, res) =>
+route.post('/userprofile', (req, res) =>
     userProfile.handleProfile(req, res, db,)
 );
 
