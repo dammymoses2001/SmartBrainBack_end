@@ -1,14 +1,22 @@
 const signIn = (req, res, bcrypt, db, jwt) => {
   const { email, password } = req.body;
+  console.log(email)
   db.select('*')
     .from('login')
     .where('email', email)
     .then((userdetail) => {
       const validatepassword = bcrypt.compareSync(password, userdetail[0].hash);
       if (validatepassword) {
-        db.select('*').from('login')
+        db.select('*').from('users')
           .where('email', email)
-          .then(user => res.json(user[0]))
+          .then(user => {
+            // console.log(user)
+            // const userdetails = {
+            //   id: user[0].id,
+            //   email: user[0].email
+            // }
+            res.status(200).json(user[0])
+          })
           .catch(err => res.status(400).json('unable to get user'))
       }
       else {

@@ -9,16 +9,35 @@ if (process.env.NODE_ENV != 'production') {
   require('dotenv').config();
 }
 
-console.log(process.env.NAME)
-const db = knex({
-  client: 'pg',
-  connection: {
-    host: process.env.DATABASE_URL,
-    ssl: {
-      rejectUnauthorized: false
-    }
-  },
-});
+//return this when you are done with tssting
+// HOST=postgresql-globular-60762
+// USER=postgres
+// PASSWORD=my password
+// DATABASE=smart_brain
+// APIKEY =cf490d3ba4954b2380e44693552901ee
+// SECRETKEY=lockitifyoucan!!!
+
+
+
+
+// const db = knex({
+//   client: 'pg',
+//   connection: {
+//     host: process.env.DATABASE_URL,
+//     ssl: {
+//       rejectUnauthorized: false
+//     }
+//   },
+// });
+// const db = knex({
+//   client: 'pg',
+//   connection: {
+//     host: process.env.HOST,
+//     user: process.env.USER,
+//     password: process.env.PASSWORD,
+//     database: process.env.DATABASE
+//   },
+// });
 
 
 // app.get('/name', (req, res) => {
